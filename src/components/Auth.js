@@ -8,8 +8,8 @@ function Auth({ setIsAuthenticated }) {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    const correctName = process.env.REACT_APP_NAME; // Retrieve from .env
-    const correctDob = process.env.REACT_APP_DOB; // Retrieve from .env
+    const correctName = "CHOKTTER"; // Retrieve from .env
+    const correctDob = "2003-02-11"; // Retrieve from .env
 
     if (name === correctName && dob === correctDob) {
       setIsAuthenticated(true); // ✅ Set authentication state to true
