@@ -39,6 +39,65 @@ function WelcomePage() {
     }
   };
 
+  const handleNotify244 = async () => {
+    try {
+      const response = await fetch(process.env.REACT_APP_API_URL + "/notify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: "Daniella pressed the button to reconnect!244",
+        }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert(data.message);
+      } else {
+        alert(data.error || "Failed to send notification.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong.");
+    }
+  };
+  const handleNotifyMomo = async () => {
+    try {
+      const response = await fetch(process.env.REACT_APP_API_URL + "/notify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: "Daniella pressed the button! Momo" }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert(data.message);
+      } else {
+        alert(data.error || "Failed to send notification.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong.");
+    }
+  };
+  const handleNotifyOther = async () => {
+    try {
+      const response = await fetch(process.env.REACT_APP_API_URL + "/notify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: "Daniella pressed the button! Other" }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert(data.message);
+      } else {
+        alert(data.error || "Failed to send notification.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong.");
+    }
+  };
   return (
     <div className="main-container">
       <div className="welcome-page">
@@ -103,6 +162,16 @@ function WelcomePage() {
         </p>
       </div>
       <Counter startDate={startDate} />
+
+      <div className="food-contianer">
+        <p>I am hungry Tenzin. Lets get some food! 😋 </p>
+        <div className="button-container">
+          <button onClick={handleNotify244}>2FourFour</button>
+          <button onClick={handleNotifyMomo}>Momo</button>
+          <button onClick={handleNotifyOther}>Other</button>
+        </div>
+      </div>
+
       <div className="notify-container">
         <p className="caution">WARNING: IRREVERSIBLE ACTION</p>
         <p className="message">
