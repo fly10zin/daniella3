@@ -364,7 +364,7 @@ button:hover {
 /* Nuclear Button Styles */
 .notify-button {
   margin-top: 2rem;
-  background-color: rgb(63, 128, 165); /* Red background */
+  background-color: rgb(63, 145, 165); /* Red background */
   color: white; /* White text */
   font-size: 2rem; /* Larger font size */
   padding: .5rem 1rem; /* Padding for size */
@@ -391,6 +391,59 @@ color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
   padding-top: 1.3rem;
   padding-bottom: 1.3rem;
+}
+
+.food-contianer {
+  
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+  background: rgb(255, 255, 255);
+  font-family: 'Arial', sans-serif;
+  color: #020202;
+ 
+  
+}
+
+/* Paragraph styling */
+.food-contianer p {
+  font-family: 'Alata', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Button container for side-by-side layout */
+.button-container {
+  display: flex;
+  gap: 15px;
+  flex-direction: row;
+  font-family: 'Alata', sans-serif;
+}
+
+/* Button base styling */
+.food-contianer button {
+  padding: .5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect for buttons */
+.food-contianer button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 38, 255, 0.5);
 }
 
 
