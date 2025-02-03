@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://daniella3.onrender.com",
+    origin: "https://daniella3.vercel.app/",
     methods: ["POST"],
   })
 );
