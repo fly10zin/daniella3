@@ -4,7 +4,13 @@ require("dotenv").config();
 const nodemailer = require("nodemailer");
 
 const app = express();
-app.use(cors());
+
+app.use(
+  cors({
+    origin: "https://daniella3.onrender.com",
+    methods: ["POST"],
+  })
+);
 app.use(express.json());
 
 app.post("/notify", async (req, res) => {
