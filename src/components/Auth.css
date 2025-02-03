@@ -1,0 +1,32 @@
+
+.auth-container {
+    text-align: center;
+  }
+  
+  h2{
+    font-size: 1.4rem;
+  }
+
+  .name{
+    text-align: left;
+    margin-bottom: -.5rem;
+  }
+
+
+  input {
+    width: 100%;
+    margin: .7rem 0;
+    padding: .5rem;
+  }
+  
+  button {
+    background-color: rgb(141, 35, 118);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+  }

@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+
+body{
+  margin: 0;
+  color: rgb(255, 255, 255);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Alata', sans-serif;
+  background-color: #000000;
+  background-size: 400% 400%;
+ 
+}
+
+
+.App{
+  text-align: center;
+}
+
+.App-header{
+  background-color: transparent;
+  padding: 2rem;
+  animation: fadeIn 1.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.welcome-page h1{
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  align-items: center;
+  text-align: center;
+
+
+}
+
+.App-header p{
+ 
+  font-size: 1.5rem;
+  color:  #ffffff;
+  margin: .5rem 0;
+  font-weight: bolder;
+}
+
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.yes{
+  background-color: #39c5f0;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  box-shadow: 0 0 2rem rgba(115, 239, 255, 0.9), 0 0 40px rgba(15, 22, 32, 0.6);
+  
+}
+
+.no{
+  background-color: #272727;
+  color: rgb(223, 223, 223);
+  font-size: .6rem;
+
+}
+
+
+.welcome-page {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+
+/*** this is completely from chatgpt
+
+
+
+
+
+
+
+
+
+********************************************************/
+
+
+/* Flower container */
+.flower-container {
+  position: relative;
+  width: 100px;
+  height: 200px;
+  margin-top: 10rem;
+}
+
+.mud {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 120px;
+  height: 30px;
+  background: linear-gradient(to top, #4b2e16, #6b4423); /* Dark brown */
+  border-radius: 50% 50% 0 0; /* Curved top */
+  transform: translateX(-50%) scaleY(0);
+  animation: mudGrow 1s forwards;
+}
+
+/* Mud Growing Animation */
+@keyframes mudGrow {
+  0% {
+    transform: translateX(-50%) scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 1;
+  }
+}
+/* Stem */
+.stem {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 0; /* Start with no height */
+  background-color: green;
+  animation: growStem 2s 1s forwards;
+}
+
+@keyframes growStem {
+  to {
+    height: 150px; /* Final height of the stem */
+  }
+}
+
+/* Rose container */
+.rose {
+  position: absolute;
+  bottom: 150px; /* Align with the top of the stem */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+}
+
+/* Petals */
+.petal {
+  position: absolute;
+  width: 40px;
+  height: 60px;
+  background: linear-gradient(to bottom, #d83084, #d369a2);
+  border-radius: 50%;
+  opacity: 0;
+  transform-origin: bottom center;
+  animation: bloom 3s 2s forwards;
+  box-shadow: 0 0 10px rgba(192, 48, 120, 0.5);
+  transform: rotate(var(--rotate)) translateY(-30px);
+}
+
+/* Petal positioning */
+.petal-1 { transform: rotate(0deg) translateY(-30px); }
+.petal-2 { transform: rotate(30deg) translateY(-30px); }
+.petal-3 { transform: rotate(60deg) translateY(-30px); }
+.petal-4 { transform: rotate(90deg) translateY(-30px); }
+.petal-5 { transform: rotate(120deg) translateY(-30px); }
+.petal-6 { transform: rotate(150deg) translateY(-30px); }
+.petal-7 { transform: rotate(180deg) translateY(-30px); }
+.petal-8 { transform: rotate(210deg) translateY(-30px); }
+.petal-9 { transform: rotate(240deg) translateY(-30px); }
+.petal-10 { transform: rotate(270deg) translateY(-30px); }
+.petal-11 { transform: rotate(300deg) translateY(-30px); }
+.petal-12 { transform: rotate(330deg) translateY(-30px); }
+
+/* Bloom animation */
+@keyframes bloom {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--rotate)) translateY(-30px) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(var(--rotate)) translateY(-30px) scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(var(--rotate)) translateY(-30px) scale(1);
+  }
+}
+
+/* Inner petals (smaller and darker) */
+.petal-1, .petal-2, .petal-3, .petal-4, .petal-5, .petal-6 {
+  width: 30px;
+  height: 50px;
+  background: linear-gradient(to bottom, #ff1493, #c71585); /* Darker pink for inner petals */
+}
+
+/* Add more leaves to the stem */
+.stem::before,
+.stem::after,
+.stem .leaf-1,
+.stem .leaf-2 {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  opacity: 0;
+  animation: growLeaves 1s 2s forwards;
+}
+
+.stem::before {
+  top: 50px;
+  left: -15px;
+  transform: rotate(-45deg);
+}
+
+.stem::after {
+  top: 80px;
+  right: -15px;
+  transform: rotate(45deg);
+}
+
+.stem .leaf-1 {
+  top: 30px;
+  left: -10px;
+  transform: rotate(-30deg);
+}
+
+.stem .leaf-2 {
+  top: 60px;
+  right: -10px;
+  transform: rotate(30deg);
+}
+
+@keyframes growLeaves {
+  to {
+    opacity: 1;
+  }
+}
+
+.rose {
+  width: 120px;
+  height: 120px;
+}
+
+.petal {
+  width: 50px;
+  height: 70px;
+}
+
+/* Gallery Section */
+.gallery-section {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+.gallery-section h2 {
+  font-size: 2rem;
+  margin-top: 50px;
+  margin-bottom: -8rem;
+  color: black;
+}
+
+.gallery {
+  margin-top: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.gallery-image {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.gallery-image:hover {
+  transform: scale(1.5);
+  
+}
+
+.main-container{
+  width: 100vw;
+  overflow-y: auto;
+}
+
+
+
+.message-container{
+  padding: 2rem;
+ 
+  font-size: 1.2rem;
+}
+
+
+.notify-container{
+  margin-top: 7rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+
+}
+.caution{
+  margin-top: 0rem;
+  color: red;
+  font-size: 2rem;
+  
+}
+
+/* Warning Text */
+
+#span1{
+  color: gray;
+  font-size: small;
+  font-style: italic;
+}
+
+/* Nuclear Button Styles */
+.notify-button {
+  margin-top: 2rem;
+  background-color: rgb(63, 128, 165); /* Red background */
+  color: white; /* White text */
+  font-size: 2rem; /* Larger font size */
+  padding: .5rem 1rem; /* Padding for size */
+  border-radius: 3rem; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth transition */
+  position: relative; /* For the animation */
+  overflow: hidden; /* Hide overflow for the animation */
+  
+
+}
+
+.message{
+  margin-top: 0rem;
+}
+
+.quotes{
+  text-align: center;
+color: rgb(0, 0, 0);
+  margin-top: 7rem;
+  margin-bottom: 0rem;
+  font-family: 'Fleur De Leah', cursive;
+  font-size: 2rem;
+  background-color: rgb(255, 255, 255);
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+}
+
+
+
