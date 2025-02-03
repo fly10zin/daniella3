@@ -4,13 +4,7 @@ require("dotenv").config();
 const nodemailer = require("nodemailer");
 
 const app = express();
-
-app.use(
-  cors({
-    origin: "https://daniella3.vercel.app/",
-    methods: ["POST"],
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 app.post("/notify", async (req, res) => {
@@ -51,7 +45,7 @@ app.post("/notify", async (req, res) => {
   }
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
